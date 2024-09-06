@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .character {
+    text-align: center;
+  }
+  
+  .health-bar {
+    width: 150px;
+    height: 20px;
+    background-color: red;
+    position: relative;
+    margin: 10px 0;
+  }
+  
+  .health-bar span {
+    display: block;
+    height: 100%;
+    background-color: green;
+    width: 100%;
+  }
+  
+  .attack-btn {
+    margin-top: 10px;
+  }
+
+  img{
+    height: 200px;
+    width: 200px;
+  }
