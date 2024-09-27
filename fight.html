@@ -24,5 +24,20 @@
 		</div>
 
 		<script src="js/fight.js"></script>
+		<audio id="backgroundMusic" autoplay loop>
+			<source src="assets/patos_furiosos.mp3" type="audio/mpeg">
+			Tu navegador no soporta la reproducción de audio.
+		  </audio>
+		
+		  <button id="playButton">Reproducir Música</button>
+		
+		  <script>
+			const playButton = document.getElementById('playButton');
+			const backgroundMusic = document.getElementById('backgroundMusic');
+		
+			playButton.addEventListener('click', () => {
+			  backgroundMusic.play();
+			});
+		  </script>
 	</body>
 </html>
