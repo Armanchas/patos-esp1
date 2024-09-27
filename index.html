@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Patos</title>
-		<link rel="stylesheet" href="assets/styles.css" />
-	</head>
-	<body>
-		<div class="container">
-			<div class="character">
-				<div class="sprite" id="hero-img"></div>
-				<div class="health-bar">
-					<span id="hero-health"></span>
-				</div>
-			</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Select</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="character-select-container">
+    <h1>Select Your Characters</h1>
+    <div class="character-selection">
+      <div>
+        <h2>Select Hero</h2>
+        <div class="character-options" id="hero-options">
+          <div class="character-option" data-character="white-duck">
+            <img src="assets/char-select/white-duck-sel.png" alt="White Duck">
+          </div>
+          <div class="character-option" data-character="yellow-duck">
+            <img src="assets/char-select/yellow-duck-sel.png" alt="Yellow Duck">
+          </div>
+          <div class="character-option" data-character="grey-duck">
+            <img src="assets/char-select/grey-duck-sel.png" alt="Grey Duck">
+          </div>
+          <div class="character-option" data-character="orange-duck">
+            <img src="assets/char-select/orange-duck-sel.png" alt="Orange Duck">
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>Select Enemy</h2>
+        <div class="character-options" id="enemy-options">
+          <div class="character-option" data-character="white-duck">
+            <img src="assets/char-select/white-duck-sel.png" alt="White Duck">
+          </div>
+          <div class="character-option" data-character="yellow-duck">
+            <img src="assets/char-select/yellow-duck-sel.png" alt="Yellow Duck">
+          </div>
+          <div class="character-option" data-character="grey-duck">
+            <img src="assets/char-select/grey-duck-sel.png" alt="Grey Duck">
+          </div>
+          <div class="character-option" data-character="orange-duck">
+            <img src="assets/char-select/orange-duck-sel.png" alt="Orange Duck">
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="start-game">Start Game</button>
+  </div>
 
-			<div class="character">
-				<div class="sprite" id="enemy-img"></div>
-				<div class="health-bar">
-					<span id="enemy-health"></span>
-				</div>
-			</div>
-		</div>
-
-		<script src="js/index.js"></script>
-	</body>
+  <script src="js/index.js"></script>
+</body>
 </html>

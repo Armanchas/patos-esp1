@@ -8,6 +8,13 @@
   100% { background-position: -2px -8px; }
 }
 
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
 .moving {
   animation: moveAnimation 0.6s steps(6) infinite;
 }
@@ -51,12 +58,43 @@
 }
 
 #hero-img {
-  background-image: url("spritesheets/white-duck.png"); 
   background-position: -2px -8px;
 }
 
 #enemy-img {
-  background-image: url("spritesheets/yellow-duck.png");
   background-position: -2px -8px; 
   transform: scale(3) scaleX(-1);
+}
+
+.character-select-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.character-selection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.character-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.character-option {
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 10px;
+}
+
+.character-option.selected {
+  border-color: blue;
+}
+
+.character-option img {
+  width: 64px;
+  height: 64px;
 }
