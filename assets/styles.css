@@ -101,6 +101,37 @@ body {
 }
 
 .character-option img {
-  width: 64px;
-  height: 64px;
+  width: 200px;
+  height: 200px;
+  margin-left: -50px;
+  margin-right: -50px;
+}
+
+h1 {
+  margin-left: 30%;
+  max-width: 40%;
+  text-align: center;
+  color: white;
+  font-size: 4rem;
+  font-weight: 9999;
+  background-color: black;
+  border-radius: 15px;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  background-color: black;
+  border-radius: 15px;
+  font-weight: 9999;
+}
+
+.character-select-container button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
