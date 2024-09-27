@@ -1,34 +1,62 @@
-.container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  .character {
-    text-align: center;
-  }
-  
-  .health-bar {
-    width: 150px;
-    height: 20px;
-    background-color: red;
-    position: relative;
-    margin: 10px 0;
-  }
-  
-  .health-bar span {
-    display: block;
-    height: 100%;
-    background-color: green;
-    width: 100%;
-  }
-  
-  .attack-btn {
-    margin-top: 10px;
-  }
+@keyframes moveAnimation {
+  0% { background-position: -2px -8px; }
+  16.67% { background-position: -34px -8px; }
+  33.33% { background-position: -66px -8px; }
+  50% { background-position: -98px -8px; }
+  66.67% { background-position: -130px -8px; }
+  83.33% { background-position: -160px -8px; }
+  100% { background-position: -2px -8px; }
+}
 
-  img{
-    height: 200px;
-    width: 200px;
-  }
+.moving {
+  animation: moveAnimation 0.6s steps(6) infinite;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.character {
+  text-align: center;
+  position: relative; 
+}
+
+.health-bar {
+  width: 150px;
+  height: 20px;
+  background-color: red;
+  position: absolute;
+  top: -40px; 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.health-bar span {
+  display: block;
+  height: 100%;
+  background-color: green;
+  width: 100%;
+}
+
+.sprite {
+  width: 32px; 
+  height: 32px;
+  background-repeat: no-repeat;
+  transform: scale(3); 
+  transform-origin: center;
+  position: absolute; 
+}
+
+#hero-img {
+  background-image: url("spritesheets/white-duck.png"); 
+  background-position: -2px -8px;
+}
+
+#enemy-img {
+  background-image: url("spritesheets/yellow-duck.png");
+  background-position: -2px -8px; 
+  transform: scale(3) scaleX(-1);
+}
