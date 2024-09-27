@@ -43,13 +43,42 @@ class Character {
     return this.health > 0;
   }
 
-  attack(target) {
-    if (target.isAlive()) {
-      console.log(`${this.name} inflige ${this.damage} de daño a ${target.name}`);
+    attack(target) {
+    if (!this.isAlive() || !target.isAlive()) return;
+  
+    const attackLine = document.createElement('div');
+    attackLine.className = 'attack-line';
+    document.body.appendChild(attackLine);
+  
+    const startX = this.position.x + (this.facingRight ? 32 : -32);
+    const startY = Math.random() * window.innerHeight; 
+    const endX = this.facingRight ? window.innerWidth : 0;
+  
+    attackLine.style.left = `${startX}px`;
+    attackLine.style.top = `${startY}px`; 
+    attackLine.style.width = `${Math.abs(endX - startX)}px`;
+  
+    if (this.checkCollision(attackLine, target.sprite)) {
       target.health -= this.damage;
       if (target.health < 0) target.health = 0;
       target.updateHealthBar();
     }
+  
+    setTimeout(() => {
+      document.body.removeChild(attackLine);
+    }, 200); 
+  }
+
+  checkCollision(attackLine, targetSprite) {
+    const attackLineRect = attackLine.getBoundingClientRect();
+    const targetRect = targetSprite.getBoundingClientRect();
+
+    return (
+      attackLineRect.left < targetRect.right &&
+      attackLineRect.right > targetRect.left &&
+      attackLineRect.top < targetRect.bottom &&
+      attackLineRect.bottom > targetRect.top
+    );
   }
 
   updateHealthBar() {
@@ -62,7 +91,7 @@ class Character {
     this.animationInterval = setInterval(() => {
       this.sprite.style.backgroundPosition = this.frames[this.currentFrame];
       this.currentFrame = (this.currentFrame + 1) % this.frames.length;
-    }, 80); 
+    }, 80);
   }
 
   stopAnimation() {
@@ -114,26 +143,16 @@ document.addEventListener('keyup', function(event) {
 
 setInterval(() => {
   if (keys['e'] || keys['E']) {
-    if (hero.isAlive() && enemy.isAlive()) {
-      hero.attack(enemy);
-      if (!enemy.isAlive()) {
-        alert("El Enemigo ha sido derrotado!");
-      }
-    }
+    hero.attack(enemy);
   }
   if (keys['/']) {
-    if (enemy.isAlive() && hero.isAlive()) {
-      enemy.attack(hero);
-      if (!hero.isAlive()) {
-        alert("El Heroe ha sido derrotado!");
-      }
-    }
+    enemy.attack(hero);
   }
   let heroMoving = false;
   let enemyMoving = false;
 
   if (keys['w'] || keys['W']) {
-    hero.move(0, -10);
+    hero.move(0, -10); 
     heroMoving = true;
   }
   if (keys['a'] || keys['A']) {
@@ -162,11 +181,11 @@ setInterval(() => {
     enemyMoving = true;
   }
   if (keys['ArrowDown']) {
-    enemy.move(0, 10);
+    enemy.move(0, 10); 
     enemyMoving = true;
   }
   if (keys['ArrowRight']) {
-    enemy.move(10, 0); 
+    enemy.move(10, 0);
     enemyMoving = true;
   }
   if (!enemyMoving) {
