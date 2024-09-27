@@ -3,29 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patos</title>
+  <title>Character Select</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-
-  <div class="container">
-    <div class="character">
-      <h2>Hero</h2>
-      <img src="https://static.vecteezy.com/system/resources/previews/007/528/060/non_2x/duck-cartoon-colored-clipart-illustration-free-vector.jpg" alt="Hero" id="hero-img">
-      <div class="health-bar">
-        <span id="hero-health"></span>
+  <div class="character-select-container">
+    <h1>Select Your Characters</h1>
+    <div class="character-selection">
+      <div>
+        <h2>Select Hero</h2>
+        <div class="character-options" id="hero-options">
+          <div class="character-option" data-character="white-duck">
+            <img src="assets/char-select/white-duck-sel.png" alt="White Duck">
+          </div>
+          <div class="character-option" data-character="yellow-duck">
+            <img src="assets/char-select/yellow-duck-sel.png" alt="Yellow Duck">
+          </div>
+          <div class="character-option" data-character="grey-duck">
+            <img src="assets/char-select/grey-duck-sel.png" alt="Grey Duck">
+          </div>
+          <div class="character-option" data-character="orange-duck">
+            <img src="assets/char-select/orange-duck-sel.png" alt="Orange Duck">
+          </div>
+        </div>
       </div>
-      <button class="attack-btn" id="hero-attack">Atacar</button>
-    </div>
-
-    <div class="character">
-      <h2>Enemy</h2>
-      <img src="https://img.freepik.com/vector-gratis/pato-lindo-blanco_1308-41058.jpg" alt="Enemy" id="enemy-img">
-      <div class="health-bar">
-        <span id="enemy-health"></span>
+      <div>
+        <h2>Select Enemy</h2>
+        <div class="character-options" id="enemy-options">
+          <div class="character-option" data-character="white-duck">
+            <img src="assets/char-select/white-duck-sel.png" alt="White Duck">
+          </div>
+          <div class="character-option" data-character="yellow-duck">
+            <img src="assets/char-select/yellow-duck-sel.png" alt="Yellow Duck">
+          </div>
+          <div class="character-option" data-character="grey-duck">
+            <img src="assets/char-select/grey-duck-sel.png" alt="Grey Duck">
+          </div>
+          <div class="character-option" data-character="orange-duck">
+            <img src="assets/char-select/orange-duck-sel.png" alt="Orange Duck">
+          </div>
+        </div>
       </div>
-      <button class="attack-btn" id="enemy-attack">Atacar</button>
     </div>
+    <button id="start-game">Start Game</button>
   </div>
 
   <script src="js/index.js"></script>

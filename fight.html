@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Patos</title>
+		<link rel="stylesheet" href="assets/styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="character">
+				<div class="sprite" id="hero-img"></div>
+				<div class="health-bar">
+					<span id="hero-health"></span>
+				</div>
+			</div>
+
+			<div class="character">
+				<div class="sprite" id="enemy-img"></div>
+				<div class="health-bar">
+					<span id="enemy-health"></span>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/fight.js"></script>
+		<audio id="backgroundMusic" autoplay loop>
+			<source src="assets/patos_furiosos.mp3" type="audio/mpeg">
+			Tu navegador no soporta la reproducción de audio.
+		  </audio>
+		
+		  <button id="playButton">Reproducir Música</button>
+		
+		  <script>
+			const playButton = document.getElementById('playButton');
+			const backgroundMusic = document.getElementById('backgroundMusic');
+		
+			playButton.addEventListener('click', () => {
+			  backgroundMusic.play();
+			});
+		  </script>
+	</body>
+</html>

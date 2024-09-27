@@ -1,34 +1,143 @@
-.container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  .character {
-    text-align: center;
-  }
-  
-  .health-bar {
-    width: 150px;
-    height: 20px;
-    background-color: red;
-    position: relative;
-    margin: 10px 0;
-  }
-  
-  .health-bar span {
-    display: block;
-    height: 100%;
-    background-color: green;
-    width: 100%;
-  }
-  
-  .attack-btn {
-    margin-top: 10px;
-  }
+@keyframes moveAnimation {
+  0% { background-position: -2px -8px; }
+  16.67% { background-position: -34px -8px; }
+  33.33% { background-position: -66px -8px; }
+  50% { background-position: -98px -8px; }
+  66.67% { background-position: -130px -8px; }
+  83.33% { background-position: -160px -8px; }
+  100% { background-position: -2px -8px; }
+}
 
-  img{
-    height: 200px;
-    width: 200px;
-  }
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  background-image: url('./background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.moving {
+  animation: moveAnimation 0.6s steps(6) infinite;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.character {
+  text-align: center;
+  position: relative; 
+}
+
+.health-bar {
+  width: 150px;
+  height: 20px;
+  background-color: red;
+  position: absolute;
+  top: -40px; 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.health-bar span {
+  display: block;
+  height: 100%;
+  background-color: green;
+  width: 100%;
+}
+
+.sprite {
+  width: 32px; 
+  height: 32px;
+  background-repeat: no-repeat;
+  transform: scale(3); 
+  transform-origin: center;
+  position: absolute; 
+}
+
+#hero-img {
+  background-position: -2px -8px;
+}
+
+#enemy-img {
+  background-position: -2px -8px; 
+  transform: scale(3) scaleX(-1);
+}
+
+.character-select-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.character-selection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.character-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.character-option {
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 10px;
+}
+
+.character-option.selected {
+  border-color: blue;
+}
+
+.character-option img {
+  width: 200px;
+  height: 200px;
+  margin-left: -50px;
+  margin-right: -50px;
+}
+
+h1 {
+  margin-left: 30%;
+  max-width: 40%;
+  text-align: center;
+  color: white;
+  font-size: 4rem;
+  font-weight: 9999;
+  background-color: black;
+  border-radius: 15px;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  background-color: black;
+  border-radius: 15px;
+  font-weight: 9999;
+}
+
+.character-select-container button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.attack-line {
+  height: 10px;
+  background-color: rgb(255, 51, 51);
+  position: absolute;
+}
