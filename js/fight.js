@@ -45,6 +45,10 @@ class Character {
 
     attack(target) {
     if (!this.isAlive() || !target.isAlive()) return;
+
+    const laserSound = document.getElementById('laserSound');
+    laserSound.currentTime = 0;
+    laserSound.play();
   
     const attackLine = document.createElement('div');
     attackLine.className = 'attack-line';
